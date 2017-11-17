@@ -8,7 +8,7 @@
 
 .itau-black-personnalite .bankLogo {
   width: 70px;
-  transform: translate(calc(70px / 2), 20px);
+  transform: translate(35px, 20px);
 }
 
 .itau-black-personnalite .number {
@@ -17,9 +17,7 @@
 }
 
 .itau-black-personnalite .expiration {
-  top: 162px;
-  left: 138px;
-  opacity: 0;
+  display: none;
 }
 
 .itau-black-personnalite .holderName {

@@ -6,7 +6,7 @@
 }
 
 .nubank .bankLogo {
-  transform: translate(calc(120px / 2), 15px);
+  transform: translate(60px, 15px);
 }
 
 .nubank .front {

@@ -14,7 +14,7 @@
 
 .itau-black .bankLogo {
   width: 300px;
-  transform: translate(calc(300px / 2), -20px);
+  transform: translate(150px, -20px);
 }
 
 .itau-black .number {
