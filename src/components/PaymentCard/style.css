@@ -113,7 +113,7 @@
   display: block;
   border-radius: 10px;
   transform: rotateY(180deg);
-  opacity: 0;
+  backface-visibility: hidden;
   z-index: 0;
 }
 
@@ -158,8 +158,4 @@
 .flipped .expiration:after {
   color: #848484;
   text-shadow: 1px -1px 0 #000000, 0 0 1px #ffffff, 1px -1px 0 #000000;
-}
-
-.flipped .back {
-  opacity: 1;
 }
