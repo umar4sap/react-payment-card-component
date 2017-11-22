@@ -1,7 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
 const eslintFormatter = require('react-dev-utils/eslintFormatter')
-const stylelintFormatter = require('./stylelintFormatter')
 const postcssUrlRebase = require('./postcssUrlRebase')
 
 const indexSrc = path.resolve(__dirname, '../src/index.js')
@@ -45,22 +44,8 @@ module.exports = {
         use: [
           {
             options: {
-              formatter: stylelintFormatter,
               plugins: () => [
                 require('stylelint'),
-                require('postcss-sass-each'),
-                require('postcss-mixins'),
-                require('postcss-import'),
-                require('postcss-url')({
-                  url: postcssUrlRebase,
-                }),
-                require('postcss-cssnext')({
-                  features: {
-                    customProperties: {
-                      strict: false,
-                    },
-                  },
-                }),
               ],
             },
             loader: require.resolve('postcss-loader'),
@@ -78,26 +63,26 @@ module.exports = {
                 options: {
                   limit: 1000000,
                   name: 'static/media/[name].[hash:8].[ext]',
-                }
+                },
               },
               {
                 loader: require.resolve('image-webpack-loader'),
                 options: {
                   mozjpeg: {
                     progressive: true,
-                    quality: 75
+                    quality: 75,
                   },
                   optipng: {
                     enabled: false,
                   },
                   pngquant: {
                     quality: '75-90',
-                    speed: 4
+                    speed: 4,
                   },
                   webp: {
-                    quality: 75
-                  }
-                }
+                    quality: 75,
+                  },
+                },
               },
             ],
           },
@@ -125,10 +110,7 @@ module.exports = {
                 options: {
                   ident: 'postcss',
                   plugins: () => [
-                    require('postcss-flexbugs-fixes'),
-                    require('postcss-sass-each'),
                     require('postcss-import'),
-                    require('postcss-mixins'),
                     require('postcss-url')({ url: postcssUrlRebase }),
                     require('postcss-cssnext'),
                   ],
@@ -161,7 +143,7 @@ module.exports = {
     }),
   ],
   externals: {
-   'react': 'react',
-   'react-dom': 'reactDOM'
+    react: 'react',
+    'react-dom': 'reactDOM',
   },
 }
