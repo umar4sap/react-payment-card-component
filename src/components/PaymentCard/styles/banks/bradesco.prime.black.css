@@ -1,37 +1,37 @@
-.card.bradesco-black-prime {
+.card.bradesco-prime-black {
   background: #000909;
 }
 
-.bradesco-black-prime .flipped {
+.bradesco-prime-black .flipped {
   background: linear-gradient(90deg, #353535, #111111);
 }
 
-.bradesco-black-prime .typeLogo {
+.bradesco-prime-black .modelLogo {
   width: 75px;
   top: 85px;
   transform: translate(calc((350px -75px) / 2), -20px);
 }
 
-.bradesco-black-prime .bankLogo {
+.bradesco-prime-black .bankLogo {
   top: -20px;
   left: 13px;
   width: 140px;
 }
 
-.bradesco-black-prime .brandLogo {
+.bradesco-prime-black .brandLogo {
   right: 20px;
 }
 
-.bradesco-black-prime .number {
+.bradesco-prime-black .number {
   left: 45px;
 }
 
-.bradesco-black-prime .expiration {
+.bradesco-prime-black .expiration {
   top: 146px;
   left: 203px;
 }
 
-.bradesco-black-prime .expiration:before {
+.bradesco-prime-black .expiration:before {
   content: "valid thru";
   text-transform: uppercase;
   position: absolute;
@@ -42,7 +42,7 @@
   color: #ffffff;
 }
 
-.bradesco-black-prime .holderName {
+.bradesco-prime-black .holderName {
   top: 180px;
   left: 30px;
   font-size: 0.8em;

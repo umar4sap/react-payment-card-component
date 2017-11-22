@@ -1,33 +1,33 @@
-.card.ourocard-black {
+.card.bb-ourocard-black {
   background: #1a191d;
 }
 
-.ourocard-black .typeLogo {
+.bb-ourocard-black .modelLogo {
   width: 75px;
   top: 62px;
   right: 30px;
 }
 
-.ourocard-black .flipped {
+.bb-ourocard-black .flipped {
   background: linear-gradient(90deg, #353535, #111111);
 }
 
-.ourocard-black .bankLogo {
+.bb-ourocard-black .bankLogo {
   width: 40px;
   top: 15px;
   left: 30px;
 }
 
-.ourocard-black .number {
+.bb-ourocard-black .number {
   left: 30px;
 }
 
-.ourocard-black .expiration {
+.bb-ourocard-black .expiration {
   top: 155px;
   left: 138px;
 }
 
-.ourocard-black:before {
+.bb-ourocard-black:before {
   content: "Ourocard";
   font-family: "Libre Franklin", sans-serif;
   color: #909090;
@@ -38,7 +38,7 @@
   backface-visibility: hidden;
 }
 
-.ourocard-black .expiration:before {
+.bb-ourocard-black .expiration:before {
   content: "GOOD THRU";
   position: absolute;
   left: -20px;
@@ -47,7 +47,7 @@
   opacity: 0.8;
 }
 
-.ourocard-black .holderName {
+.bb-ourocard-black .holderName {
   top: 180px;
   left: 30px;
   font-size: 0.8em;

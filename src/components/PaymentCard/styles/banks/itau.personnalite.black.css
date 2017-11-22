@@ -1,27 +1,27 @@
-.card.itau-black-personnalite {
+.card.itau-personnalite-black {
   background: #0b0000;
 }
 
-.itau-black-personnalite .flipped {
+.itau-personnalite-black .flipped {
   background: linear-gradient(90deg, #353535, #111111);
 }
 
-.itau-black-personnalite .bankLogo {
+.itau-personnalite-black .bankLogo {
   width: 70px;
   top: 20px;
   left: 140px;
 }
 
-.itau-black-personnalite .number {
+.itau-personnalite-black .number {
   left: 30px;
   opacity: 0.5;
 }
 
-.itau-black-personnalite .expiration {
+.itau-personnalite-black .expiration {
   opacity: 0;
 }
 
-.itau-black-personnalite .holderName {
+.itau-personnalite-black .holderName {
   top: 180px;
   left: 30px;
   font-size: 0.8em;

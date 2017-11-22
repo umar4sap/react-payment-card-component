@@ -6,6 +6,7 @@ storiesOf('Nubank', module)
   .add('Gold', () => (
     <PaymentCardContainer
       bank="nubank"
+      model="normal"
       type="gold"
       brand="mastercard"
       number="4111111111111111"
@@ -17,6 +18,7 @@ storiesOf('Nubank', module)
   .add('Platinum', () => (
     <PaymentCardContainer
       bank="nubank"
+      model="normal"
       type="platinum"
       brand="mastercard"
       number="4111111111111111"
