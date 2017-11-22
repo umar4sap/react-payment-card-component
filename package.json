@@ -24,7 +24,6 @@
     "enzyme-adapter-react-16": "1.0.4",
     "eslint": "4.11.0",
     "eslint-config-pagarme-react": "1.1.0",
-    "eslint-config-react-app": "2.0.1",
     "eslint-loader": "1.9.0",
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-jsx-a11y": "5.1.1",
