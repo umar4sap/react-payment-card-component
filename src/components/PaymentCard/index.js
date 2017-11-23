@@ -2,10 +2,24 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
+import './style.css'
 import Logo from '../Logo'
 
 const formatCardNumber = cardNumber =>
   cardNumber.replace(/\s/g, '').replace(/(\d{4})/g, '$1 ')
+
+const cardClasses = (bank, model, type, flipped) => {
+  const cardClassName = `${bank}-${model}-${type}`
+
+  return classNames(
+    'card',
+    bank,
+    {
+      flipped,
+      [cardClassName]: (bank && model && type),
+    },
+  )
+}
 
 const PaymentCard = ({
   bank,
@@ -19,14 +33,7 @@ const PaymentCard = ({
   flipped,
 }) => (
   <div className="wrapper">
-    <div className={
-      classNames(
-        'card',
-        bank,
-        bank && model && type ? `${bank}-${model}-${type}` : '',
-        { flipped },
-      )}
-    >
+    <div className={cardClasses(bank, model, type, flipped)}>
       <div className="front">
         <Logo
           bank={bank}

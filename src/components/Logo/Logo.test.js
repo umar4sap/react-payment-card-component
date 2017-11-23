@@ -1,60 +1,48 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import PaymentCard from '../PaymentCard'
+import Logo from '../Logo'
 
 it('should mount with no logo', () => {
   const wrapper = mount(
-    <PaymentCard />
+    <Logo />
   )
 
   expect(wrapper.find('img').at(0)).toHaveLength(0)
 })
 
-it('should mount with bank logo', () => {
+it('should mount bank logo', () => {
   const wrapper = mount(
-    <PaymentCard
+    <Logo
       bank="nubank"
       model="normal"
       type="gold"
+      className="bankLogo"
     />
   )
 
   expect(wrapper.find('.bankLogo').at(0)).toHaveLength(1)
 })
 
-it('should mount with brand logo', () => {
+it('should mount brand logo', () => {
   const wrapper = mount(
-    <PaymentCard
+    <Logo
       brand="mastercard"
+      className="brandLogo"
     />
   )
 
   expect(wrapper.find('.brandLogo').at(0)).toHaveLength(1)
 })
 
-it('should mount with bank logo and brand logo', () => {
+it('should mount model logo', () => {
   const wrapper = mount(
-    <PaymentCard
-      bank="nubank"
-      brand="mastercard"
-    />
-  )
-
-  expect(wrapper.find('.bankLogo').at(0)).toHaveLength(1)
-  expect(wrapper.find('.brandLogo').at(0)).toHaveLength(1)
-})
-
-it('should mount with bank logo, brand logo and model logo', () => {
-  const wrapper = mount(
-    <PaymentCard
+    <Logo
       bank="itau"
       model="personnalite"
       type="black"
-      brand="mastercard"
+      className="modelLogo"
     />
   )
 
-  expect(wrapper.find('.bankLogo').at(0)).toHaveLength(1)
-  expect(wrapper.find('.brandLogo').at(0)).toHaveLength(1)
   expect(wrapper.find('.modelLogo').at(0)).toHaveLength(1)
 })
