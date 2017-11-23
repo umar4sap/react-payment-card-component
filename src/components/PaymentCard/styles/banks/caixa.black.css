@@ -7,7 +7,8 @@
 }
 
 .caixa-black .bankLogo {
-  transform: translate(150px, 20px);
+  top: 20px;
+  left: 205px;
 }
 
 .caixa-black .chip:after {
