@@ -1,18 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import Image from '../Image'
 import bankLogos from './helpers/bankLogos'
 import brandLogos from './helpers/brandLogos'
 import modelLogos from './helpers/modelLogos'
 import './style.css'
-
-const Image = ({ src, alt, className }) => {
-  if (src) {
-    return (<img src={src} alt={alt} className={className} />)
-  }
-
-  return ''
-}
 
 const Logo = ({
   bank,
@@ -25,7 +18,7 @@ const Logo = ({
     return (
       <Image
         src={brandLogos[brand]}
-        alt={bank}
+        alt={brand}
         className={className}
       />
     )
@@ -75,18 +68,6 @@ Logo.defaultProps = {
   model: '',
   type: '',
   brand: '',
-  className: '',
-}
-
-Image.propTypes = {
-  src: PropTypes.string,
-  alt: PropTypes.string,
-  className: PropTypes.string,
-}
-
-Image.defaultProps = {
-  src: '',
-  alt: '',
   className: '',
 }
 
