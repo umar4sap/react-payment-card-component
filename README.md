@@ -45,6 +45,7 @@ render () {
   return (
     <PaymentCard
       bank="itau"
+      model="personnalite"
       type="black"
       brand="mastercard"
       number="4111111111111111"
@@ -73,7 +74,8 @@ flipCard () {
 | Name | Type | Required | Description | 
 | ---- | ---- | -------- | ----------- |
 | `bank` | String | **true** | The bank prop defines the major style for the card, like the elements positions, background color and logos. Examples.: _default_, _itau_, _santander_, _nubank_ |
-|  `type` | String | **false** (although it's not required, some styles may not properly work without it) | The type is used alongside with bank to get the final card styling. They are the types of a credit card that each bank can emit. Examples.: _gold_, _black_, _platinum_ | 
+|  `model` | String | **false** | Model refers to the card model. Examples.: _normal_, _prime_, _personnalite_ | 
+|  `type` | String | **false** (although it's not required, some styles may not properly work without it) | The type is used alongside with bank and model to get the final card styling. They are the types of a credit card that each bank can emit. Examples.: _gold_, _black_, _platinum_ | 
 | `brand` | String | **true** | This prop is used to get the correct logo and position of the brand used in the card. Examples: _mastercard_, _visa_. |
 | `number` | String | **false** | The card number printed in the card |
 | `cvv`| String | **false** | 3-digit CVV (Card Verification Value) |
@@ -87,17 +89,26 @@ flipCard () {
 
 The CSS files to manage the banks styles are under `./src/components/PaymentCard/styles`, where each bank needs its own file under the  `banks` folder and have it imported in the main `./src/components/PaymentCard/styles/index.css` file.
 
-To add a new style, remember to create classes following the pattern: **_bankName_-_cardType_**: 
+To add a new style, remember to create classes following the pattern: **_bankName_-_cardModel_-_cardType_**: 
 
 ```css
-.santander-black {
+.santander-normal-black {
   background: #000000;
 }
 ```
 
 ### Logos
 
-Each bank should have a proper logo corresponding to the one in the card, bank logos are placed under  `./src/components/Logo/images/banks`, remember to keep the files as small as possible and to export them in `./src/components/Logo/images/banks/index.js`.
+Each bank should have a proper logo corresponding to the one in the card, bank logos are placed under  `./src/components/Logo/images/banks`.
+After adding your new image, remember that it should be exported in `./src/components/Logo/helpers/bankLogos.js`, according to the following pattern:
+
+```js
+bankName: {
+  cardModel: {
+    cardType: imageFile,
+  },
+},
+```
 
 ## Contributing
 
