@@ -13,7 +13,6 @@
 }
 
 .card {
-  position: relative;
   width: 350px;
   height: 222px;
   min-width: 350px;
@@ -25,8 +24,7 @@
 }
 
 .front {
-  width: 100%;
-  height: 100%;
+  display: block;
   z-index: 1;
   color: var(--card-text-color-default);
   font-family: var(--card-text-font);
@@ -91,7 +89,6 @@
   top: 120px;
   left: var(--card-text-space-left);
   font-size: 18px;
-  font-weight: normal;
   letter-spacing: 0.14em;
 }
 
@@ -100,7 +97,6 @@
   top: 160px;
   left: var(--card-text-space-left);
   font-size: 16px;
-  font-weight: normal;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -114,14 +110,10 @@
 }
 
 .back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  display: block;
   border-radius: 10px;
-  transform: rotateY(180deg);
-  opacity: 0;
+  transform: rotateY(180deg) translate3d(0, 0, 1px);
+  backface-visibility: hidden;
   z-index: 0;
 }
 
@@ -129,11 +121,9 @@
   content: "";
   position: absolute;
   top: 10px;
-  left: 0;
   width: 100%;
   height: 40px;
   background-color: #1b1b1b;
-  display: block;
 }
 
 .cvv {
@@ -168,8 +158,4 @@
 .flipped .expiration:after {
   color: #848484;
   text-shadow: 1px -1px 0 #000000, 0 0 1px #ffffff, 1px -1px 0 #000000;
-}
-
-.flipped .back {
-  opacity: 1;
 }

@@ -1,5 +1,7 @@
 .babelrc
+.editorconfig
 .eslintrc
+.stylelintrc
 .github
 *.DS_Store
 *npm-debug.log
