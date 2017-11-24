@@ -52,7 +52,7 @@ const Logo = ({
     }
   }
 
-  return ''
+  return null
 }
 
 Logo.propTypes = {
