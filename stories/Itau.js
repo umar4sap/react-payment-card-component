@@ -2,10 +2,11 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import PaymentCardContainer from './PaymentCardContainer'
 
-storiesOf('Itaú', module)
-  .add('Black', () => (
+storiesOf('Itaú/Black', module)
+  .add('Normal', () => (
     <PaymentCardContainer
       bank="itau"
+      model="normal"
       type="black"
       brand="mastercard"
       number="4111111111111111"
@@ -14,10 +15,11 @@ storiesOf('Itaú', module)
       expiration="12/19"
     />
   ))
-  .add('Black Personnalité', () => (
+  .add('Personnalité', () => (
     <PaymentCardContainer
       bank="itau"
-      type="black-personnalite"
+      model="personnalite"
+      type="black"
       brand="mastercard"
       number="4111111111111111"
       cvv="123"

@@ -1,41 +1,42 @@
-.card.santander-black {
+.card.santander-normal-black {
   background: #000000;
 }
 
-.santander-black .flipped {
+.santander-normal-black .flipped {
   background: linear-gradient(90deg, #353535, #111111);
 }
 
-.santander-black .bankLogo {
+.santander-normal-black .bankLogo {
   top: 15px;
   left: 20px;
 }
 
-.santander-black .chip:after {
+.santander-normal-black .chip:after {
   content: "unlimited";
   position: absolute;
   top: 12px;
-  left: 70px;
+  left: 80px;
   display: block;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 10px;
 }
 
-.santander-black .holderName {
+.santander-normal-black .holderName {
   top: 190px;
   left: 35px;
 }
 
-.santander-black .number {
+.santander-normal-black .number {
   left: 35px;
 }
 
-.santander-black .expiration {
+.santander-normal-black .expiration {
   top: 166px;
   left: 156px;
 }
 
-.santander-black .expiration:before {
+.santander-normal-black .expiration:before {
   content: "valid thru";
   position: absolute;
   top: -7px;

@@ -5,7 +5,7 @@
 
 .bankLogo,
 .brandLogo,
-.typeLogo {
+.modelLogo {
   backface-visibility: hidden;
   position: absolute;
 }

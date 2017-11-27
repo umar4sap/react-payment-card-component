@@ -1,17 +1,17 @@
-.card.caixa-black {
+.card.caixa-normal-black {
   background: #000000;
 }
 
-.caixa-black .flipped {
+.caixa-normal-black .flipped {
   background: linear-gradient(90deg, #353535, #111111);
 }
 
-.caixa-black .bankLogo {
+.caixa-normal-black .bankLogo {
   top: 20px;
   left: 205px;
 }
 
-.caixa-black .chip:after {
+.caixa-normal-black .chip:after {
   content: "black";
   position: absolute;
   top: 12px;
@@ -22,21 +22,21 @@
   font-size: 14px;
 }
 
-.caixa-black .holderName {
+.caixa-normal-black .holderName {
   top: 190px;
   left: 35px;
 }
 
-.caixa-black .number {
+.caixa-normal-black .number {
   left: 35px;
 }
 
-.caixa-black .expiration {
+.caixa-normal-black .expiration {
   top: 166px;
   left: 156px;
 }
 
-.caixa-black .expiration:before {
+.caixa-normal-black .expiration:before {
   content: "valid thru";
   position: absolute;
   top: -7px;

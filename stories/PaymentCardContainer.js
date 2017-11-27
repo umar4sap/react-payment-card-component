@@ -22,6 +22,7 @@ class PaymentCardContainer extends Component {
       <div>
         <PaymentCard
           bank={this.props.bank}
+          model={this.props.model}
           type={this.props.type}
           brand={this.props.brand}
           number={this.props.number}
@@ -40,18 +41,10 @@ class PaymentCardContainer extends Component {
 }
 
 PaymentCardContainer.propTypes = {
-  bank: PropTypes.oneOf([
-    'default',
-    'nubank',
-    'bradesco',
-    'santander',
-  ]),
+  bank: PropTypes.string,
+  model: PropTypes.string,
   type: PropTypes.string,
-  brand: PropTypes.oneOf([
-    'mastercard',
-    'visa',
-    'hipercard',
-  ]),
+  brand: PropTypes.string,
   number: PropTypes.string,
   cvv: PropTypes.string,
   holderName: PropTypes.string,
@@ -59,9 +52,10 @@ PaymentCardContainer.propTypes = {
 }
 
 PaymentCardContainer.defaultProps = {
-  bank: 'default',
+  bank: '',
+  model: '',
   type: '',
-  brand: 'mastercard',
+  brand: '',
   number: '•••• •••• •••• ••••',
   cvv: '•••',
   holderName: 'Nome Completo',

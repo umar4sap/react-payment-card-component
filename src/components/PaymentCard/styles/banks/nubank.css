@@ -1,5 +1,5 @@
-@import "/nubank.gold.css";
-@import "/nubank.platinum.css";
+@import "/nubank.normal.gold.css";
+@import "/nubank.normal.platinum.css";
 
 .card.nubank {
   background: linear-gradient(to bottom right, #833e85 0%, #521a5a 100%);

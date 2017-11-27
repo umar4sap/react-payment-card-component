@@ -1,71 +1,73 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import bankLogos from './images/banks'
-import brandLogos from './images/brands'
-import typeLogos from './images/types'
+
+import bankLogos from './helpers/bankLogos'
+import brandLogos from './helpers/brandLogos'
+import modelLogos from './helpers/modelLogos'
 import './style.css'
-
-const capitalize = string =>
-  string.charAt(0).toUpperCase() + string.slice(1)
-
-const getLogo = (className, sourceName, brandName) => {
-  if (className === 'brandLogo') {
-    return brandLogos[brandName]
-  }
-
-  if (className === 'bankLogo') {
-    return bankLogos[sourceName]
-  }
-
-  if (className === 'typeLogo') {
-    return typeLogos[sourceName]
-  }
-
-  return ''
-}
-
-const capitalizeType = (type) => {
-  if (!type) return ''
-
-  const names = type.split('-')
-
-  if (names.length > 1) {
-    return names.map(capitalize).join('')
-  }
-
-  return capitalize(type)
-}
 
 const Logo = ({
   bank,
+  model,
   type,
   brand,
   className,
 }) => {
-  const bankWithType = `${bank}${capitalizeType(type)}`
-  const logoSrc = getLogo(className, bankWithType, brand)
-
-  if (!logoSrc) {
-    return ''
+  if (className === 'brandLogo' && brandLogos[brand]) {
+    return (
+      <img
+        src={brandLogos[brand]}
+        alt={brand}
+        className={className}
+      />
+    )
   }
 
-  return (
-    <img src={logoSrc} alt={bank} className={className} />
-  )
+  const bankLogosObj = bankLogos[bank]
+  if (className === 'bankLogo' && bankLogosObj) {
+    const modelObj = bankLogosObj[model]
+    if (modelObj && modelObj[type]) {
+      return (
+        <img
+          src={modelObj[type]}
+          alt={bank}
+          className={className}
+        />
+      )
+    }
+  }
+
+  const modelLogosObj = modelLogos[bank]
+  if (className === 'modelLogo' && modelLogosObj) {
+    const logoObj = modelLogosObj[model]
+    if (logoObj && logoObj[type]) {
+      return (
+        <img
+          src={logoObj[type]}
+          alt={bank}
+          className={className}
+        />
+      )
+    }
+  }
+
+  return null
 }
 
 Logo.propTypes = {
   bank: PropTypes.string,
+  model: PropTypes.string,
   type: PropTypes.string,
   brand: PropTypes.string,
   className: PropTypes.string,
 }
 
 Logo.defaultProps = {
-  bank: 'default',
+  bank: '',
+  model: '',
   type: '',
   brand: '',
-  className: PropTypes.string,
+  className: '',
 }
 
 export default Logo

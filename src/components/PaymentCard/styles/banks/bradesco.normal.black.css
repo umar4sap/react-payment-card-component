@@ -1,30 +1,30 @@
-.card.bradesco-black {
+.card.bradesco-normal-black {
   background: #000000;
 }
 
-.bradesco-black .flipped {
+.bradesco-normal-black .flipped {
   background: linear-gradient(90deg, #353535, #111111);
 }
 
-.bradesco-black .bankLogo {
+.bradesco-normal-black .bankLogo {
   top: 15px;
   left: 30px;
 }
 
-.bradesco-black .brandLogo {
+.bradesco-normal-black .brandLogo {
   right: 20px;
 }
 
-.bradesco-black .number {
+.bradesco-normal-black .number {
   left: 35px;
 }
 
-.bradesco-black .expiration {
+.bradesco-normal-black .expiration {
   top: 146px;
   left: 203px;
 }
 
-.bradesco-black .expiration:before {
+.bradesco-normal-black .expiration:before {
   content: "valid thru";
   text-transform: uppercase;
   position: absolute;
@@ -34,7 +34,7 @@
   left: -50px;
 }
 
-.bradesco-black .holderName {
+.bradesco-normal-black .holderName {
   top: 180px;
   left: 30px;
   font-size: 0.8em;
