@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Image from '../Image'
 import bankLogos from './helpers/bankLogos'
 import brandLogos from './helpers/brandLogos'
 import modelLogos from './helpers/modelLogos'
@@ -14,9 +13,9 @@ const Logo = ({
   brand,
   className,
 }) => {
-  if (className === 'brandLogo') {
+  if (className === 'brandLogo' && brandLogos[brand]) {
     return (
-      <Image
+      <img
         src={brandLogos[brand]}
         alt={brand}
         className={className}
@@ -27,9 +26,9 @@ const Logo = ({
   const bankLogosObj = bankLogos[bank]
   if (className === 'bankLogo' && bankLogosObj) {
     const modelObj = bankLogosObj[model]
-    if (modelObj) {
+    if (modelObj && modelObj[type]) {
       return (
-        <Image
+        <img
           src={modelObj[type]}
           alt={bank}
           className={className}
@@ -41,9 +40,9 @@ const Logo = ({
   const modelLogosObj = modelLogos[bank]
   if (className === 'modelLogo' && modelLogosObj) {
     const logoObj = modelLogosObj[model]
-    if (logoObj) {
+    if (logoObj && logoObj[type]) {
       return (
-        <Image
+        <img
           src={logoObj[type]}
           alt={bank}
           className={className}
@@ -52,7 +51,7 @@ const Logo = ({
     }
   }
 
-  return ''
+  return null
 }
 
 Logo.propTypes = {

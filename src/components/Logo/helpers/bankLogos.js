@@ -3,7 +3,7 @@ import bradescoPrime from '../images/banks/bradesco-prime.png'
 
 import caixaWhite from '../images/banks/caixa-white.png'
 
-import itauBlackAndWhite from '../images/banks/itau-black-white.png'
+import itauGrey from '../images/banks/itau-grey.png'
 import itauPersonnalite from '../images/banks/itau-personnalite.png'
 
 import nubank from '../images/banks/nubank.png'
@@ -27,7 +27,7 @@ export default {
   },
   itau: {
     normal: {
-      black: itauBlackAndWhite,
+      black: itauGrey,
     },
     personnalite: {
       black: itauPersonnalite,
