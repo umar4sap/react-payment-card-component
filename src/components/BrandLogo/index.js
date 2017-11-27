@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import brandLogos from './helpers/brandLogos'
 
-import './style.css'
+import styles from './style.css'
 
 const BrandLogo = ({
   brand,
@@ -16,7 +16,7 @@ const BrandLogo = ({
     <img
       src={brandLogos[brand]}
       alt={brand}
-      className="brandLogo"
+      className={styles.brandLogo}
     />
   )
 }

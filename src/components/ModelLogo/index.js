@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import modelLogos from './helpers/modelLogos'
 
-import './style.css'
+import styles from './style.css'
 
 const ModelLogo = ({
   bank,
@@ -22,7 +22,7 @@ const ModelLogo = ({
     <img
       src={modelLogos[bank][model][type]}
       alt={model}
-      className="modelLogo"
+      className={styles.modelLogo}
     />
   )
 }
