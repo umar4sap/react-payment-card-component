@@ -1,25 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
 
 import './style.css'
-import Logo from '../Logo'
-
-const formatCardNumber = cardNumber =>
-  cardNumber.replace(/\s/g, '').replace(/(\d{4})/g, '$1 ')
-
-const cardClasses = (bank, model, type, flipped) => {
-  const cardClassName = `${bank}-${model}-${type}`
-
-  return classNames(
-    'card',
-    bank,
-    {
-      flipped,
-      [cardClassName]: (bank && model && type),
-    },
-  )
-}
+import BankLogo from '../BankLogo'
+import ModelLogo from '../ModelLogo'
+import BrandLogo from '../BrandLogo'
+import CardNumber from '../CardNumber'
+import Card from '../Card'
 
 const PaymentCard = ({
   bank,
@@ -33,44 +20,42 @@ const PaymentCard = ({
   flipped,
 }) => (
   <div className="wrapper">
-    <div className={cardClasses(bank, model, type, flipped)}>
+    <Card
+      bank={bank}
+      model={model}
+      type={type}
+      flipped={flipped}
+    >
       <div className="front">
-        <Logo
+        <BankLogo
           bank={bank}
           model={model}
           type={type}
-          className="bankLogo"
         />
-        <Logo
+        <ModelLogo
           bank={bank}
           model={model}
           type={type}
-          className="modelLogo"
         />
         <div className="chip">
           <div className="horizontalLine" />
           <div className="verticalLine" />
         </div>
-        <div className="number">
-          {formatCardNumber(number)}
-        </div>
+        <CardNumber number={number} />
         <div className="expiration">
           {expiration}
         </div>
         <div className="holderName">
           {holderName}
         </div>
-        <Logo
-          brand={brand}
-          className="brandLogo"
-        />
+        <BrandLogo brand={brand} />
       </div>
       <div className="back">
         <div className="cvv">
           {cvv}
         </div>
       </div>
-    </div>
+    </Card>
   </div>
 )
 

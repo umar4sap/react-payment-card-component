@@ -6,6 +6,8 @@
   --card-text-font: "Overpass Mono", monospaced;
   --card-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
   --card-background-default: linear-gradient(90deg, #353535, #717171);
+  --width-bank-logo: 120px;
+  --width-brand-logo: 70px;
 }
 
 .wrapper {
@@ -158,4 +160,22 @@
 .flipped .expiration:after {
   color: #848484;
   text-shadow: 1px -1px 0 #000000, 0 0 1px #ffffff, 1px -1px 0 #000000;
+}
+
+.bankLogo,
+.brandLogo,
+.modelLogo {
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+.bankLogo {
+  right: 50%;
+  width: var(--width-bank-logo);
+}
+
+.brandLogo {
+  bottom: 10px;
+  right: 25px;
+  width: var(--width-brand-logo);
 }
