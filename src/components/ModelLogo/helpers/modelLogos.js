@@ -1,4 +1,4 @@
-import mastercardBlack from '../images/models/mastercard-black.png'
+import mastercardBlack from '../images/mastercard-black.png'
 
 export default {
   bradesco: {

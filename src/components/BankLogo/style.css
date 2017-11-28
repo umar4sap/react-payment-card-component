@@ -1,0 +1,10 @@
+:root {
+  --width-bank-logo: 120px;
+}
+
+.bankLogo {
+  right: 50%;
+  width: var(--width-bank-logo);
+  backface-visibility: hidden;
+  position: absolute;
+}
