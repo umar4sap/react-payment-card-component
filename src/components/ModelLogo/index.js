@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 
 import modelLogos from './helpers/modelLogos'
 
+import './style.css'
+
 const ModelLogo = ({
   bank,
   model,

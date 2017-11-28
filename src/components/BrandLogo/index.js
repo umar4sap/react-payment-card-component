@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 
 import brandLogos from './helpers/brandLogos'
 
+import './style.css'
+
 const BrandLogo = ({
   brand,
 }) => {

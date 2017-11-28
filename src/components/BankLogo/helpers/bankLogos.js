@@ -1,15 +1,15 @@
-import bradescoWhite from '../images/banks/bradesco-white.png'
-import bradescoPrime from '../images/banks/bradesco-prime.png'
+import bradescoWhite from '../images/bradesco-white.png'
+import bradescoPrime from '../images/bradesco-prime.png'
 
-import caixaWhite from '../images/banks/caixa-white.png'
+import caixaWhite from '../images/caixa-white.png'
 
-import itauGrey from '../images/banks/itau-grey.png'
-import itauPersonnalite from '../images/banks/itau-personnalite.png'
+import itauGrey from '../images/itau-grey.png'
+import itauPersonnalite from '../images/itau-personnalite.png'
 
-import nubank from '../images/banks/nubank.png'
+import nubank from '../images/nubank.png'
 
-import bb from '../images/banks/bb.png'
-import santanderWhite from '../images/banks/santander-white.png'
+import bb from '../images/bb.png'
+import santanderWhite from '../images/santander-white.png'
 
 export default {
   bradesco: {

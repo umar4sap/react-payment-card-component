@@ -1,7 +1,7 @@
-import mastercard from '../images/brands/mastercard.svg'
-import visa from '../images/brands/visa.svg'
-import hipercard from '../images/brands/hipercard.svg'
-import elo from '../images/brands/elo.svg'
+import mastercard from '../images/mastercard.svg'
+import visa from '../images/visa.svg'
+import hipercard from '../images/hipercard.svg'
+import elo from '../images/elo.svg'
 
 export default {
   mastercard,

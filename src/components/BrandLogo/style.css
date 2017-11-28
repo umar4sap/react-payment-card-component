@@ -1,0 +1,11 @@
+:root {
+  --width-brand-logo: 70px;
+}
+
+.brandLogo {
+  backface-visibility: hidden;
+  position: absolute;
+  bottom: 10px;
+  right: 25px;
+  width: var(--width-brand-logo);
+}
