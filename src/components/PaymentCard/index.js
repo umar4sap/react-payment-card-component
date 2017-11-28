@@ -1,12 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
 import './style.css'
 import BankLogo from '../BankLogo'
 import ModelLogo from '../ModelLogo'
 import BrandLogo from '../BrandLogo'
-import CardNumber from '../CardNumber'
-import Card from '../Card'
+
+const cardClasses = (bank, model, type, flipped) => {
+  const cardClassName = `${bank}-${model}-${type}`
+
+  return classNames(
+    'card',
+    bank,
+    {
+      flipped,
+      [cardClassName]: (bank && model && type),
+    },
+  )
+}
+
+const formatCardNumber = cardNumber =>
+  cardNumber.replace(/\s/g, '').replace(/(\d{4})/g, '$1 ')
 
 const PaymentCard = ({
   bank,
@@ -20,12 +35,7 @@ const PaymentCard = ({
   flipped,
 }) => (
   <div className="wrapper">
-    <Card
-      bank={bank}
-      model={model}
-      type={type}
-      flipped={flipped}
-    >
+    <div className={cardClasses(bank, model, type, flipped)}>
       <div className="front">
         <BankLogo
           bank={bank}
@@ -41,7 +51,9 @@ const PaymentCard = ({
           <div className="horizontalLine" />
           <div className="verticalLine" />
         </div>
-        <CardNumber number={number} />
+        <div className="number">
+          {formatCardNumber(number)}
+        </div>
         <div className="expiration">
           {expiration}
         </div>
@@ -55,7 +67,7 @@ const PaymentCard = ({
           {cvv}
         </div>
       </div>
-    </Card>
+    </div>
   </div>
 )
 
