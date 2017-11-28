@@ -22,7 +22,7 @@ const ModelLogo = ({
     <img
       src={modelLogos[bank][model][type]}
       alt={model}
-      className={styles.modelLogo}
+      className={styles[`${bank}-${model}-${type}`]}
     />
   )
 }

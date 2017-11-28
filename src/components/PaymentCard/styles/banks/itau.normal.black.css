@@ -2,20 +2,8 @@
   background: #1a191d;
 }
 
-.itau-normal-black .modelLogo {
-  width: 75px;
-  top: 15px;
-  left: 20px;
-}
-
 .itau-normal-black .flipped {
   background: linear-gradient(90deg, #353535, #111111);
-}
-
-.itau-normal-black .bankLogo {
-  width: 300px;
-  top: -20px;
-  left: 25px;
 }
 
 .itau-normal-black .number {

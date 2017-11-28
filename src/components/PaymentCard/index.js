@@ -60,7 +60,12 @@ const PaymentCard = ({
         <div className={styles.holderName}>
           {holderName}
         </div>
-        <BrandLogo brand={brand} />
+        <BrandLogo
+          brand={brand}
+          bank={bank}
+          model={model}
+          type={type}
+        />
       </div>
       <div className={styles.back}>
         <div className={styles.cvv}>
