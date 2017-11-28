@@ -103,16 +103,17 @@ To add a new style, remember to create classes following the pattern: **_bankNam
 
 ### Logos
 
-Each bank should have a proper logo corresponding to the one in the card, bank logos are placed under  `./src/components/Logo/images/banks`.
-After adding your new image, remember that it should be exported in `./src/components/Logo/helpers/bankLogos.js`, according to the following pattern:
+We currently have 3 types of logos: 
+- bankLogo
+- brandLogo
+- modelLogo
 
-```js
-bankName: {
-  cardModel: {
-    cardType: imageFile,
-  },
-},
-```
+If you need to add new assets for corresponding logos, do it under the proper component folder in the images folder.
+
+#### Guidelines
+
+- Prefer .svg files or .png (in that order)
+- Keep them as small as possible, even if they are going to be compressed in the build process
 
 ## Contributing
 
