@@ -6,15 +6,17 @@ import brandLogos from './helpers/brandLogos'
 const BrandLogo = ({
   brand,
 }) => {
-  if (brandLogos[brand]) {
-    return (<img
+  if (!brandLogos[brand]) {
+    return null
+  }
+
+  return (
+    <img
       src={brandLogos[brand]}
       alt={brand}
       className="brandLogo"
-    />)
-  }
-
-  return null
+    />
+  )
 }
 
 BrandLogo.propTypes = {

@@ -8,15 +8,21 @@ const BankLogo = ({
   model,
   type,
 }) => {
-  if (bankLogos[bank] && bankLogos[bank][model] && bankLogos[bank][model][type]) {
-    return (<img
+  if (
+    !bankLogos[bank] ||
+    !bankLogos[bank][model] ||
+    !bankLogos[bank][model][type]
+  ) {
+    return null
+  }
+
+  return (
+    <img
       src={bankLogos[bank][model][type]}
       alt={bank}
       className="bankLogo"
-    />)
-  }
-
-  return null
+    />
+  )
 }
 
 BankLogo.propTypes = {
