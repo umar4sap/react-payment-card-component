@@ -55,7 +55,7 @@ PaymentCardContainer.defaultProps = {
   bank: '',
   model: '',
   type: '',
-  brand: 'mastercard',
+  brand: '',
   number: '•••• •••• •••• ••••',
   cvv: '•••',
   holderName: 'Nome Completo',
