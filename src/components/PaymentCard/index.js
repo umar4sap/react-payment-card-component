@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
-import './style.css'
+import styles from './style.css'
 import BankLogo from '../BankLogo'
 import ModelLogo from '../ModelLogo'
 import BrandLogo from '../BrandLogo'
@@ -11,11 +11,11 @@ const cardClasses = (bank, model, type, flipped) => {
   const cardClassName = `${bank}-${model}-${type}`
 
   return classNames(
-    'card',
-    bank,
+    styles.card,
+    styles[bank],
     {
-      flipped,
-      [cardClassName]: (bank && model && type),
+      [styles.flipped]: flipped,
+      [styles[cardClassName]]: (bank && model && type),
     },
   )
 }
@@ -34,9 +34,9 @@ const PaymentCard = ({
   brand,
   flipped,
 }) => (
-  <div className="wrapper">
+  <div className={styles.wrapper}>
     <div className={cardClasses(bank, model, type, flipped)}>
-      <div className="front">
+      <div className={styles.front}>
         <BankLogo
           bank={bank}
           model={model}
@@ -47,23 +47,28 @@ const PaymentCard = ({
           model={model}
           type={type}
         />
-        <div className="chip">
-          <div className="horizontalLine" />
-          <div className="verticalLine" />
+        <div className={styles.chip}>
+          <div className={styles.horizontalLine} />
+          <div className={styles.verticalLine} />
         </div>
-        <div className="number">
+        <div className={styles.number}>
           {formatCardNumber(number)}
         </div>
-        <div className="expiration">
+        <div className={styles.expiration}>
           {expiration}
         </div>
-        <div className="holderName">
+        <div className={styles.holderName}>
           {holderName}
         </div>
-        <BrandLogo brand={brand} />
+        <BrandLogo
+          brand={brand}
+          bank={bank}
+          model={model}
+          type={type}
+        />
       </div>
-      <div className="back">
-        <div className="cvv">
+      <div className={styles.back}>
+        <div className={styles.cvv}>
           {cvv}
         </div>
       </div>

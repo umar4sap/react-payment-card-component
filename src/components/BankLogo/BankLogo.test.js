@@ -8,7 +8,7 @@ describe('BankLogo', () => {
       <BankLogo />
     )
 
-    expect(wrapper.find('.bankLogo').at(0)).toHaveLength(0)
+    expect(wrapper.html()).toBeNull()
   })
 
   it('should not mount without type', () => {
@@ -19,7 +19,7 @@ describe('BankLogo', () => {
       />
     )
 
-    expect(wrapper.find('.bankLogo').at(0)).toHaveLength(0)
+    expect(wrapper.html()).toBeNull()
   })
 
 
@@ -32,6 +32,6 @@ describe('BankLogo', () => {
       />
     )
 
-    expect(wrapper.find('.bankLogo').at(0)).toHaveLength(1)
+    expect(wrapper.find('img')).toHaveLength(1)
   })
 })

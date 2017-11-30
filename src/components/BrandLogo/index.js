@@ -1,12 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
 import brandLogos from './helpers/brandLogos'
 
-import './style.css'
+import styles from './style.css'
 
 const BrandLogo = ({
   brand,
+  bank,
+  model,
+  type,
 }) => {
   if (!brandLogos[brand]) {
     return null
@@ -16,17 +20,23 @@ const BrandLogo = ({
     <img
       src={brandLogos[brand]}
       alt={brand}
-      className="brandLogo"
+      className={classNames(styles[`${bank}-${model}-${type}`], styles.brandLogo)}
     />
   )
 }
 
 BrandLogo.propTypes = {
   brand: PropTypes.string,
+  bank: PropTypes.string,
+  model: PropTypes.string,
+  type: PropTypes.string,
 }
 
 BrandLogo.defaultProps = {
   brand: '',
+  bank: '',
+  model: '',
+  type: '',
 }
 
 export default BrandLogo

@@ -8,7 +8,7 @@ describe('BrandLogo', () => {
       <BrandLogo />
     )
 
-    expect(wrapper.find('.bankLogo').at(0)).toHaveLength(0)
+    expect(wrapper.html()).toBeNull()
   })
 
   it('should not mount with brand nonexistent', () => {
@@ -18,7 +18,7 @@ describe('BrandLogo', () => {
       />
     )
 
-    expect(wrapper.find('.bankLogo').at(0)).toHaveLength(0)
+    expect(wrapper.html()).toBeNull()
   })
 
 
@@ -29,6 +29,6 @@ describe('BrandLogo', () => {
       />
     )
 
-    expect(wrapper.find('.brandLogo').at(0)).toHaveLength(1)
+    expect(wrapper.find('img')).toHaveLength(1)
   })
 })
