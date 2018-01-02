@@ -18,23 +18,19 @@ Check it live at https://pagarme.github.io/react-payment-card-component
 
 To use this component in your React app, start by adding it to the project dependencies list:
 
->
-> Disclaimer: The project was not published in NPM yet.
->
-
-npm version > 5
+#### npm version > 5
 
 ```sh
 npm i react-payment-card-component
 ```
 
-npm version < 5
+#### npm version < 5
 
 ```sh
 npm i react-payment-card-component --save
 ```
 
-yarn
+#### yarn
 
 ```sh
 yarn add react-payment-card-component
