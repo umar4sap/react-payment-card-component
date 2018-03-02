@@ -7,7 +7,7 @@ import BankLogo from '../BankLogo'
 import ModelLogo from '../ModelLogo'
 import BrandLogo from '../BrandLogo'
 
-const cardClasses = (bank, model, type, flipped) => {
+const cardClasses = (bank, model, type, flipped, className) => {
   const cardClassName = `${bank}-${model}-${type}`
 
   return classNames(
@@ -17,6 +17,7 @@ const cardClasses = (bank, model, type, flipped) => {
       [styles.flipped]: flipped,
       [styles[cardClassName]]: (bank && model && type),
     },
+    className,
   )
 }
 
@@ -33,9 +34,10 @@ const PaymentCard = ({
   holderName,
   brand,
   flipped,
+  className,
 }) => (
   <div className={styles.wrapper}>
-    <div className={cardClasses(bank, model, type, flipped)}>
+    <div className={cardClasses(bank, model, type, flipped, className)}>
       <div className={styles.front}>
         <BankLogo
           bank={bank}
@@ -86,6 +88,7 @@ PaymentCard.propTypes = {
   holderName: PropTypes.string,
   expiration: PropTypes.string,
   flipped: PropTypes.bool,
+  className: PropTypes.string,
 }
 
 PaymentCard.defaultProps = {
@@ -98,6 +101,7 @@ PaymentCard.defaultProps = {
   holderName: 'Nome Completo',
   expiration: 'MM/AA',
   flipped: false,
+  className: null,
 }
 
 export default PaymentCard
