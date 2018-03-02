@@ -1,39 +1,8 @@
-const path = require('path')
-const eslintFormatter = require('react-dev-utils/eslintFormatter')
 const postcssUrlRebase = require('./postcssUrlRebase')
 
 module.exports = {
   module: {
     rules: [
-      {
-        test: /\.(js|jsx)$/,
-        enforce: 'pre',
-        use: [
-          {
-            options: {
-              formatter: eslintFormatter,
-              eslintPath: require.resolve('eslint'),
-            },
-            loader: require.resolve('eslint-loader'),
-          },
-        ],
-        include: path.resolve(__dirname, '../src'),
-      },
-      {
-        test: /\.css$/,
-        enforce: 'pre',
-        use: [
-          {
-            options: {
-              plugins: () => [
-                require('stylelint'),
-              ],
-            },
-            loader: require.resolve('postcss-loader'),
-          },
-        ],
-        include: path.resolve(__dirname, '../src'),
-      },
       {
         test: /\.css$/,
         use: [

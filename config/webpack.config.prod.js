@@ -1,58 +1,17 @@
 const path = require('path')
-const webpack = require('webpack')
-const eslintFormatter = require('react-dev-utils/eslintFormatter')
 const postcssUrlRebase = require('./postcssUrlRebase')
 
-const indexSrc = path.resolve(__dirname, '../src/index.js')
 const appSrc = path.resolve(__dirname, '../src')
-const libSrc = path.resolve(__dirname, '../lib')
-
-process.env.BABEL_ENV = 'production'
-process.env.NODE_ENV = 'production'
 
 module.exports = {
-  context: appSrc,
-  entry: indexSrc,
-  devtool: 'source-map',
-  target: 'web',
+  mode: 'production',
   output: {
-    path: libSrc,
     libraryTarget: 'umd',
     umdNamedDefine: true,
     filename: 'index.js',
-    sourceMapFilename: 'index.js.map',
   },
   module: {
     rules: [
-      {
-        test: /\.(js|jsx)$/,
-        enforce: 'pre',
-        use: [
-          {
-            options: {
-              formatter: eslintFormatter,
-              eslintPath: require.resolve('eslint'),
-            },
-            loader: require.resolve('eslint-loader'),
-          },
-        ],
-        include: appSrc,
-      },
-      {
-        test: /\.css$/,
-        enforce: 'pre',
-        use: [
-          {
-            options: {
-              plugins: () => [
-                require('stylelint'),
-              ],
-            },
-            loader: require.resolve('postcss-loader'),
-          },
-        ],
-        include: path.resolve(__dirname, '../src'),
-      },
       {
         oneOf: [
           {
@@ -128,22 +87,5 @@ module.exports = {
         ],
       },
     ],
-  },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        comparisons: false,
-      },
-      output: {
-        comments: false,
-        ascii_only: true,
-      },
-      sourceMap: true,
-    }),
-  ],
-  externals: {
-    react: 'react',
-    'react-dom': 'reactDOM',
   },
 }
