@@ -1,7 +1,7 @@
 import bradescoWhite from '../images/bradesco-white.png'
 import bradescoPrime from '../images/bradesco-prime.png'
 
-import caixaWhite from '../images/caixa-white.png'
+import caixaWhite from '../images/Logo.png'
 
 import itauGrey from '../images/itau-grey.png'
 import itauPersonnalite from '../images/itau-personnalite.png'
